@@ -1,0 +1,26 @@
+{
+    "data": [
+        {
+            "type": "pay",
+            "money": -99,
+            "date": "2023-12-11 10:34:30",
+            "useFor": "drinks",
+            "id": 1
+        },
+        {
+            "type": "pay",
+            "money": -99,
+            "date": "2023-12-12 11:34:30",
+            "useFor": "dinner",
+            "id": 1
+        },
+        {
+            "type": "incom",
+            "money": 3000,
+            "date": "2023-12-12 11:34:30",
+            "useFor": "salary",
+            "id": 3
+        }
+
+    ]
+}
