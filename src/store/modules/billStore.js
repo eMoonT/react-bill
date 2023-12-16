@@ -8,7 +8,7 @@ const billStore = createSlice({
     },
     reducers: {
         setBillList: (state,action) => {
-            state.billList.push(action.payload)
+            state.billList = action.payload
         }
     }
 })
