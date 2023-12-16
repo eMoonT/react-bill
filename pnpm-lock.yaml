@@ -11,6 +11,9 @@ dependencies:
   antd-mobile:
     specifier: ^5.33.1
     version: 5.33.1(react-dom@18.2.0)(react@18.2.0)
+  antd-mobile-icons:
+    specifier: ^0.3.0
+    version: 0.3.0
   axios:
     specifier: ^1.6.2
     version: 1.6.2
