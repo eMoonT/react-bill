@@ -2,3 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+
+    .input-bg:nth-child(1) > input {
+        @apply w-[350px];
+        @apply py-3;
+        @apply pr-6;
+        @apply bg-white;
+        @apply text-right;
+        @apply rounded-lg;
+        @apply border;
+        @apply border-gray-600;
+    }
+
+    .selected {
+        --backgroud-color: #69ae78;
+    }
+}

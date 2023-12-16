@@ -1,4 +1,7 @@
 import { useMemo } from "react";
+import { billTypeToName } from "../../contants";
+import Icon from "../Icon";
+import { useState } from "react";
 
 const DailyItem = ({date,billList}) => {
   const dayResult = useMemo(() => {
@@ -15,13 +18,16 @@ const DailyItem = ({date,billList}) => {
     };
   }, [billList]);
 
+  const [ visible, setVisible ] = useState(false)
+
   return (
     <div className="py-3 px-3 mt-3 rounded-lg shadow-lg space-y-3">
       <div className="flex justify-between items-center">
         <span className="font-semibold">{date}</span>
         <svg
+          onClick={() => setVisible(!visible)}
           t="1702725769798"
-          className="icon"
+          className="icon transition duration-500 ease-in-out"
           viewBox="0 0 1024 1024"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -37,8 +43,17 @@ const DailyItem = ({date,billList}) => {
         </svg>
       </div>
       <div className="flex justify-between items-center space-x-2">
-        <span>支出{dayResult.pay.toFixed(2)}</span><span>收入{dayResult.income.toFixed(2)}</span><span>结余{dayResult.total.toFixed(2)}</span>
+        <span>支出{dayResult.pay}</span><span>收入{dayResult.income}</span><span>结余{dayResult.total}</span>
       </div>
+      { visible && billList.map(item => {
+        return <div key={item.id} className="pt-2 flex justify-between border-t">
+          <div className="flex items-center space-x-1">
+            <Icon type={item.useFor} />
+            <span>{billTypeToName[item.useFor]}</span>
+          </div>
+          <span>{item.money.toFixed(2)}</span>
+        </div>
+      })}
     </div>
   );
 };
