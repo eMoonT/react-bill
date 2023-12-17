@@ -15,7 +15,18 @@
         @apply border-gray-600;
     }
 
+    .bg-green-primary {
+        @apply bg-green-300 !important;
+    }
+
     .selected {
-        --backgroud-color: #69ae78;
+        background-color: #000000 !important;
+        color: white !important;
+    }
+
+    .active {
+        background-color: rgb(182, 181, 181) !important;
+        padding: 3px;
+        border-radius: 10%;
     }
 }

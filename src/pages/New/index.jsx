@@ -47,13 +47,14 @@ const New = () => {
         <div className="kaType pt-3 pb-2 flex justify-center space-x-2">
           <Button
             shape="rounded"
-            className="selected"
+            className={classNames(billType === 'pay' ? 'selected':'')}
             onClick={() => setBillType("pay")}
           >
             支出
           </Button>
           <Button
             shape="rounded"
+            className={classNames(billType === 'income' ? 'selected':'')}
             onClick={() => setBillType("income")}
           >
             收入
@@ -62,7 +63,7 @@ const New = () => {
 
         <div className="kaFormWrapper py-3 flex justify-center items-center">
           <div className="kaForm flex items-center">
-            <div className="date py-1 px-1 rounded-md flex items-center fixed left-7 space-x-1 bg-green-200">
+            <div className="date py-1 px-1 rounded-md flex items-center fixed left-7 space-x-1 bg-green-primary">
               <Icon type="calendar" className="icon" />
               <span
                 className="text"
@@ -104,7 +105,7 @@ const New = () => {
                     <div
                       className={classNames(
                         "item",'text-center','flex','flex-col','items-center',
-                        useFor === item.type ? "selected" : ""
+                        useFor === item.type ? "active" : ""
                       )}
                       key={item.type}
                       onClick={() => setUseFor(item.type)}
@@ -123,7 +124,7 @@ const New = () => {
       </div>
 
       <div className="btns flex items-center justify-center">
-        <Button className="btn save w-[200px] bg-green-300" onClick={saveBill}>
+        <Button className="btn save w-[200px] bg-green-primary" onClick={saveBill}>
           保 存
         </Button>
       </div>
